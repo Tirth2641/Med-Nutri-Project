@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login - Mednutri</title>
+    <link rel="stylesheet" href="./assets/CSS/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center">Login to Mednutri</h2>
+        <form id="loginForm">
+            <input type="email" id="email" placeholder="Email" class="form-control mb-3" required>
+            <input type="password" id="password" placeholder="Password" class="form-control mb-3" required>
+            <select id="userRole" class="form-control mb-3" required>
+                <option value="">Select Role</option>
+                <option value="admin">Admin</option>
+                <option value="doctor">Doctor</option>
+            </select>
+            <button type="submit" class="btn btn-primary w-100">Login</button>
+        </form>
+        <p class="mt-3 text-center">Don't have an account? <a href="./signup.html">Create new account</a></p>
+    </div>
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", async function (e) {
+            e.preventDefault();
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            const user_type = document.getElementById("userRole").value;
+
+            const res = await fetch("http://127.0.0.1:7000/auth/login/", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ email, password, user_type })
+            });
+
+            const data = await res.json();
+
+            if (res.ok) {
+                localStorage.setItem("user", JSON.stringify(data));
+                if (user_type === "admin") window.location.href = "Admin_Dashboard.html";
+                else if (user_type === "doctor") window.location.href = "Doctor_Dashboard.html";
+            } else {
+                alert("Login failed: " + data.detail);
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+/* styles.css */
+
+body {
+    font-family: sans-serif;
+    color: #333;
+}
+
+.hero-section {
+    padding-top: 120px;
+    /* Adjust based on fixed navbar height */
+    padding-bottom: 80px;
+}
+
+.hero-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.hero-section p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+#about {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+#about h2 {
+    color: #007bff;
+    /* Example primary color */
+    margin-bottom: 30px;
+}
+
+#about .lead {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+#services {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+#services h2 {
+    color: #28a745;
+    /* Example success color */
+    margin-bottom: 30px;
+}
+
+#services .card {
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 0.15rem 0.5rem rgba(0, 0, 0, 0.05);
+}
+
+#services .card-title {
+    font-size: 1.25rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+#contact {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+#contact h2 {
+    color: #ffc107;
+    /* Example warning color */
+    margin-bottom: 30px;
+}
+
+footer {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 0.9rem;
+}
+
+footer a {
+    text-decoration: none;
+}

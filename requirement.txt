@@ -1,0 +1,8 @@
+fastapi[all]
+twilio
+fpdf
+cryptography
+pymysql
+google-generativeai
+mysql
+mysql-connector-python
